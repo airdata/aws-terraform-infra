@@ -1,0 +1,9 @@
+# settings.yml
+
+branches:
+  main:
+    - enforce_admins
+    - required_pull_request_reviews:
+        required_approving_review_count: 2
+    - required_status_checks:
+        - continuous-integration/build
