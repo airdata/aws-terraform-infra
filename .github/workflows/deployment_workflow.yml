@@ -3,14 +3,20 @@ name: Apply Repository Settings
 on: push
 
 jobs:
-  apply-settings:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Apply settings
-        run: |
-          # Use a script or tool to apply settings
-          github-settings apply --file settings.yml
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run github-settings
+        run: github-settings apply --file settings.yml
