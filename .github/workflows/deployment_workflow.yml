@@ -1,5 +1,7 @@
 name: Apply Repository Settings
 
+on: push
+
 jobs:
   apply-settings:
     runs-on: ubuntu-latest
@@ -11,4 +13,4 @@ jobs:
       - name: Apply settings
         run: |
           # Use a script or tool to apply settings
-          github-settings apply --file repo-settings.yml
+          github-settings apply --file settings.yml
