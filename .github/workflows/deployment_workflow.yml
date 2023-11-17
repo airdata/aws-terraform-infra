@@ -1,8 +1,4 @@
 name: Apply Repository Settings
-on:
-  push:
-    branches:
-      - main
 
 jobs:
   apply-settings:
